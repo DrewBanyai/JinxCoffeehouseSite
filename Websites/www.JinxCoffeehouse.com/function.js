@@ -1,25 +1,26 @@
-// Code By Webdevtrick ( https://webdevtrick.com )
-// Review Loop
-function fade($ele) {
-    $ele.fadeIn(1000).delay(3000).fadeOut(1000, function() {
+//  Function used to fade each quote in, in order
+function fade($element) {
+    $element.fadeIn(1000).delay(3000).fadeOut(1000, function() {
+        //  Grab the next quote entry, and ensure we circle around if we've reached the end
         var $next = $(this).next('.quote');
-        fade($next.length > 0 ? $next : $(this).parent().children().first());
+        $next = $next.length > 0 ? $next : $(this).parent().children().first();
+
+        //  Fade the next entry in and start the process over
+        fade($next);
    });
 }
 fade($('.quoteLoop > .quote').first());
 
-// Navigation
 
+
+//  When scrolling, if we've gone past the top portion of the site, stick the navigation bar to the top of the screen
 $(window).scroll(function() {
 
-    if ($(window).scrollTop() > 300) {
-        $('.main_nav').addClass('sticky');
-    } else {
-        $('.main_nav').removeClass('sticky');
-    }
+    if ($(window).scrollTop() > 300) { $('.main_nav').addClass('sticky'); }
+    else { $('.main_nav').removeClass('sticky'); }
 });
 
-// Mobile Navigation
+// For mobile navigation, click to open and close the navigation menu
 $('.mobile-toggle').click(function() {
     if ($('.main_nav').hasClass('open-nav')) {
         $('.main_nav').removeClass('open-nav');
