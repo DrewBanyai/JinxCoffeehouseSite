@@ -1,10 +1,12 @@
+using System.Text.Json.Serialization;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
 namespace REST_API.Models;
 
-public class MenuItemModel
+public class MenuItem
 {
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum MenuItemType {
         UNKNOWN,
         DRINK,

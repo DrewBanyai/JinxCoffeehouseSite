@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+
 using REST_API.Services;
 using REST_API.Models;
 using System.Text.Json.Nodes;
@@ -22,35 +23,35 @@ public class MenuController : ControllerBase
 
     //  CREATE
     [HttpPost(Name = "Menu Post")]
-    public async Task<List<MenuItemModel>> Post([FromBody]JsonObject? data)
+    public async Task<List<MenuItem>> Post([FromBody]MenuPostBody? data)
     {
-        MenuItemModel.MenuItemType menuItemType = MenuItemModel.MenuItemType.UNKNOWN;
-        var itemTypeValue = data?["MenuItemType"];
+        MenuItem.MenuItemType menuItemType = MenuItem.MenuItemType.UNKNOWN;
+        var itemTypeValue = data?.MenuItemType.ToUpper();
         if (itemTypeValue != null) {
-            switch (itemTypeValue.GetValue<string>().ToUpper()) {
+            switch (itemTypeValue) {
                 case null:
                     break;
                 case "DRINK":
-                    menuItemType = MenuItemModel.MenuItemType.DRINK;
+                    menuItemType = MenuItem.MenuItemType.DRINK;
                     break;
                 case "FOOD":
-                    menuItemType = MenuItemModel.MenuItemType.FOOD;
+                    menuItemType = MenuItem.MenuItemType.FOOD;
                     break;
                 case "OTHER":
-                    menuItemType = MenuItemModel.MenuItemType.OTHER;
+                    menuItemType = MenuItem.MenuItemType.OTHER;
                     break;
             };
         }
 
         var menuList = await _menuService.GetAsync();
-        if (menuItemType != MenuItemModel.MenuItemType.UNKNOWN) menuList = menuList.Where(item => item.Type == menuItemType).ToList();
+        if (menuItemType != MenuItem.MenuItemType.UNKNOWN) menuList = menuList.Where(item => item.Type == menuItemType).ToList();
         return menuList;
     }
 
 
     //  READ
     [HttpGet(Name = "Menu Get")]
-    public async Task<List<MenuItemModel>> Get()
+    public async Task<List<MenuItem>> Get()
     {
         var menuList = await _menuService.GetAsync();
         return menuList;
