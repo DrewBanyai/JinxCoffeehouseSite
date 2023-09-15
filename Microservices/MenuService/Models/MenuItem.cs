@@ -1,4 +1,3 @@
-using System.Text.Json.Serialization;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
@@ -6,17 +5,13 @@ namespace REST_API.Models;
 
 public class MenuItem
 {
-    [JsonConverter(typeof(JsonStringEnumConverter))]
-    public enum MenuItemType {
-        UNKNOWN,
-        DRINK,
-        FOOD,
-        OTHER
-    };
-
     [BsonId]
     [BsonRepresentation(BsonType.ObjectId)]
     public string? Id {get; set; }
+
+    public DateTime CreatedAt {get; set;} = new DateTime(0);
+
+    public DateTime LastEditedAt {get; set;} = new DateTime(0);
 
     [BsonElement("Name")]
     public string Name {get; set;} = "MenuItem";

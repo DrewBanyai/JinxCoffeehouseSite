@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using REST_API.Services;
 using REST_API.Models;
 using System.Text.Json.Nodes;
+using REST_API.DTOs;
 
 namespace REST_API.Controllers;
 
@@ -23,29 +24,29 @@ public class MenuController : ControllerBase
 
     //  CREATE
     [HttpPost(Name = "Menu Post")]
-    public async Task<ServiceResponse<List<MenuItem>>> Post([FromBody]MenuPostBody? data)
+    public async Task<ServiceResponse<List<MenuItemDTO>>> Post([FromBody]MenuPostBody? data)
     {
-        MenuItem.MenuItemType menuItemType = MenuItem.MenuItemType.UNKNOWN;
+        MenuItemType menuItemType = MenuItemType.UNKNOWN;
         var itemTypeValue = data?.MenuItemType.ToUpper();
         if (itemTypeValue != null) {
             switch (itemTypeValue) {
                 case null:
                     break;
                 case "DRINK":
-                    menuItemType = MenuItem.MenuItemType.DRINK;
+                    menuItemType = MenuItemType.DRINK;
                     break;
                 case "FOOD":
-                    menuItemType = MenuItem.MenuItemType.FOOD;
+                    menuItemType = MenuItemType.FOOD;
                     break;
                 case "OTHER":
-                    menuItemType = MenuItem.MenuItemType.OTHER;
+                    menuItemType = MenuItemType.OTHER;
                     break;
             };
         }
 
         var menuList = await _menuService.GetAsync();
-        if (menuItemType != MenuItem.MenuItemType.UNKNOWN) menuList = menuList.Where(item => item.Type == menuItemType).ToList();
-        return new ServiceResponse<List<MenuItem>>() {
+        if (menuItemType != MenuItemType.UNKNOWN) menuList = menuList.Where(item => item.Type == menuItemType).ToList();
+        return new ServiceResponse<List<MenuItemDTO>>() {
             Data = menuList,
             Success = true,
             Message = "Success"
@@ -55,10 +56,10 @@ public class MenuController : ControllerBase
 
     //  READ
     [HttpGet(Name = "Menu Get")]
-    public async Task<ServiceResponse<List<MenuItem>>> Get()
+    public async Task<ServiceResponse<List<MenuItemDTO>>> Get()
     {
         var menuList = await _menuService.GetAsync();
-        return new ServiceResponse<List<MenuItem>>() {
+        return new ServiceResponse<List<MenuItemDTO>>() {
             Data = menuList,
             Success = true,
             Message = "Success"

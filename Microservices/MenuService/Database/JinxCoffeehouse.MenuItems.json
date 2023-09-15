@@ -2,6 +2,8 @@
   "_id": {
     "$oid": "6503bfd6558e460a90911974"
   },
+  "CreatedAt": "2023-09-15T00:00:00.000Z",
+  "LastEditedAt": "2023-09-15T00:00:00.000Z",
   "Name": "Vanilla Chai",
   "Type": 1,
   "Description": "Black tea infused with cinnamon, clove and other warming spices is combined with steamed milk and topped with foam for the perfect balance of sweet and spicy. An iconic chai cup."
@@ -10,6 +12,8 @@
   "_id": {
     "$oid": "6503c0ca558e460a90911975"
   },
+  "CreatedAt": "2023-09-15T00:00:00.000Z",
+  "LastEditedAt": "2023-09-15T00:00:00.000Z",
   "Name": "Caffè Americano",
   "Type": 1,
   "Description": "Espresso shots topped with hot water create a light layer of crema culminating in this wonderfully rich cup with depth and nuance."
@@ -18,6 +22,8 @@
   "_id": {
     "$oid": "6503cc14558e460a90911976"
   },
+  "CreatedAt": "2023-09-15T00:00:00.000Z",
+  "LastEditedAt": "2023-09-15T00:00:00.000Z",
   "Name": "Chocolate Croissant",
   "Type": 2,
   "Description": "Two generous pieces of chocolate wrapped in a butter croissant with soft, flaky layers and a golden-brown crust. -VEGETARIAN"
@@ -26,6 +32,8 @@
   "_id": {
     "$oid": "6503cc61558e460a90911977"
   },
+  "CreatedAt": "2023-09-15T00:00:00.000Z",
+  "LastEditedAt": "2023-09-15T00:00:00.000Z",
   "Name": "Monthly JINX Mug",
   "Type": 3,
   "Description": "Check out the newest design of our official JNX Merch mug. Design by our good friend SpookyLatte. Available until the next design drops, so get it while you can!"
