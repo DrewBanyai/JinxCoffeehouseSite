@@ -4,11 +4,11 @@ using MongoDB.Driver;
 
 namespace REST_API.Services;
 
-public class MenuService
+public class MenuItemService
 {
     private readonly IMongoCollection<MenuItem> _menuItemCollection;
 
-    public MenuService(IOptions<DatabaseSettings> databaseSettings)
+    public MenuItemService(IOptions<DatabaseSettings> databaseSettings)
     {
         var mongoClient = new MongoClient(databaseSettings.Value.ConnectionString);
 

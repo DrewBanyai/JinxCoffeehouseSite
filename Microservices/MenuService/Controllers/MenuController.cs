@@ -11,10 +11,10 @@ namespace REST_API.Controllers;
 public class MenuController : ControllerBase
 {
     
-    private readonly MenuService _menuService;
+    private readonly MenuItemService _menuService;
     private readonly ILogger<MenuController> _logger;
 
-    public MenuController(MenuService menuService, ILogger<MenuController> logger)
+    public MenuController(MenuItemService menuService, ILogger<MenuController> logger)
     {
         _menuService = menuService;
         _logger = logger;
