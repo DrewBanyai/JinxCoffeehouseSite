@@ -4,6 +4,7 @@ using REST_API.Services;
 using REST_API.Models;
 using System.Text.Json.Nodes;
 using REST_API.DTOs;
+using Microsoft.AspNetCore.Authentication;
 
 namespace REST_API.Controllers;
 
@@ -69,24 +70,40 @@ public class MenuController : ControllerBase
 
     //  UPDATE
     [HttpPut(Name = "Menu Put")]
-    public ServiceResponse<string> Put()
+    public async Task<ServiceResponse<List<MenuItemDTO>>> Put(MenuItemDTO? updateItem)
     {
-        return new ServiceResponse<string>() {
-            Data = null,
+        if (updateItem?.Id != null)
+        {
+            var entry = await _menuService.GetAsync(updateItem.Id);
+            if (entry == null)
+                return new ServiceResponse<List<MenuItemDTO>>() { Data = null, Success = false, Message = "No Menu Item with the given ID: " + updateItem.Id };
+
+            await _menuService.UpdateAsync(updateItem.Id, updateItem);
+        }
+
+        var menuList = await _menuService.GetAsync();
+        return new ServiceResponse<List<MenuItemDTO>>() {
+            Data = menuList,
             Success = true,
-            Message = "This route does not have a PUT request method, only POST. Try again."
+            Message = "Success"
         };
     }
 
 
     //  DELETE
     [HttpDelete(Name = "Menu Delete")]
-    public ServiceResponse<string> Delete()
+    public async Task<ServiceResponse<string>> Delete(string itemId)
     {
+        var entry = await _menuService.GetAsync(itemId);
+        if (entry == null)
+            return new ServiceResponse<string>() { Data = null, Success = false, Message = "No Menu Item with the given ID: " + itemId };
+
+        await _menuService.RemoveAsync(itemId);
+
         return new ServiceResponse<string>() {
             Data = null,
             Success = true,
-            Message = "This route does not have a DELETE request method, only POST. Try again."
+            Message = "Menu Item Deleted"
         };
     }
 }
