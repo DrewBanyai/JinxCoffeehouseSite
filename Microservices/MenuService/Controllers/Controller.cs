@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using REST_API.Models;
 
 namespace REST_API.Controllers;
 
@@ -16,36 +17,52 @@ public class Controller : ControllerBase
 
     //  CREATE
     [HttpPost(Name = "Post")]
-    public string Post()
+    public ServiceResponse<string> Post()
     {
-        return "This route does not have a POST request method, only GET. Try again.";
+        return new ServiceResponse<string>() {
+            Data = null,
+            Success = true,
+            Message = "This route does not have a POST request method, only POST. Try again."
+        };
     }
 
 
     //  READ
     [HttpGet(Name = "Get")]
-    public List<string> Get()
+    public ServiceResponse<List<string>> Get()
     {
-        return new List<string>() {
+        return new ServiceResponse<List<string>>() {
+            Data = new List<string>() {
             "Hello, World!",
             "The Jinx Coffeehouse API is LIVE!",
             "Version 1.0.0"
+            },
+            Success = true,
+            Message = ""
         };
     }
 
 
     //  UPDATE
     [HttpPut(Name = "Put")]
-    public string Put()
+    public ServiceResponse<string> Put()
     {
-        return "This route does not have a PUT request method, only GET. Try again.";
+        return new ServiceResponse<string>() {
+            Data = null,
+            Success = true,
+            Message = "This route does not have a PUT request method, only POST. Try again."
+        };
     }
 
 
     //  DELETE
     [HttpDelete(Name = "Delete")]
-    public string Delete()
+    public ServiceResponse<string> Delete()
     {
-        return "This route does not have a DELETE request method, only GET. Try again.";
+        return new ServiceResponse<string>() {
+            Data = null,
+            Success = true,
+            Message = "This route does not have a DELETE request method, only POST. Try again."
+        };
     }
 }

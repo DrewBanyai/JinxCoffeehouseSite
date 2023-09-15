@@ -23,7 +23,7 @@ public class MenuController : ControllerBase
 
     //  CREATE
     [HttpPost(Name = "Menu Post")]
-    public async Task<List<MenuItem>> Post([FromBody]MenuPostBody? data)
+    public async Task<ServiceResponse<List<MenuItem>>> Post([FromBody]MenuPostBody? data)
     {
         MenuItem.MenuItemType menuItemType = MenuItem.MenuItemType.UNKNOWN;
         var itemTypeValue = data?.MenuItemType.ToUpper();
@@ -45,31 +45,47 @@ public class MenuController : ControllerBase
 
         var menuList = await _menuService.GetAsync();
         if (menuItemType != MenuItem.MenuItemType.UNKNOWN) menuList = menuList.Where(item => item.Type == menuItemType).ToList();
-        return menuList;
+        return new ServiceResponse<List<MenuItem>>() {
+            Data = menuList,
+            Success = true,
+            Message = "Success"
+        };
     }
 
 
     //  READ
     [HttpGet(Name = "Menu Get")]
-    public async Task<List<MenuItem>> Get()
+    public async Task<ServiceResponse<List<MenuItem>>> Get()
     {
         var menuList = await _menuService.GetAsync();
-        return menuList;
+        return new ServiceResponse<List<MenuItem>>() {
+            Data = menuList,
+            Success = true,
+            Message = "Success"
+        };
     }
 
 
     //  UPDATE
     [HttpPut(Name = "Menu Put")]
-    public string Put()
+    public ServiceResponse<string> Put()
     {
-        return "This route does not have a PUT request method, only POST. Try again.";
+        return new ServiceResponse<string>() {
+            Data = null,
+            Success = true,
+            Message = "This route does not have a PUT request method, only POST. Try again."
+        };
     }
 
 
     //  DELETE
     [HttpDelete(Name = "Menu Delete")]
-    public string Delete()
+    public ServiceResponse<string> Delete()
     {
-        return "This route does not have a DELETE request method, only POST. Try again.";
+        return new ServiceResponse<string>() {
+            Data = null,
+            Success = true,
+            Message = "This route does not have a DELETE request method, only POST. Try again."
+        };
     }
 }
