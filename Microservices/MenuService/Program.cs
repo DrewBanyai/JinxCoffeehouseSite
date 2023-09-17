@@ -6,7 +6,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.Configure<DatabaseSettings>(builder.Configuration.GetSection("Database"));
 
-builder.Services.AddSingleton<MenuItemService>();
+builder.Services.AddSingleton<MenuItemsService>();
+builder.Services.AddSingleton<MenuImagesService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

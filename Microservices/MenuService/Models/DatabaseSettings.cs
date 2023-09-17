@@ -6,5 +6,7 @@ public class DatabaseSettings
 
     public string DatabaseName { get; set; } = null!;
 
-    public string MenuCollectionName { get; set; } = null!;
+    public string MenuItemsCollectionName { get; set; } = null!;
+
+    public string MenuImagesCollectionName { get; set; } = null!;
 }

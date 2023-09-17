@@ -10,5 +10,7 @@ public class AutoMapperProfile : Profile
     {
         CreateMap<MenuItem, MenuItemDTO>();
         CreateMap<MenuItemDTO, MenuItem>();
+        CreateMap<MenuImage, MenuImageDTO>();
+        CreateMap<MenuImageDTO, MenuImage>();
     }
 }

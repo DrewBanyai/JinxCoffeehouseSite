@@ -22,7 +22,7 @@ public class Controller : ControllerBase
         return new ServiceResponse<string>() {
             Data = null,
             Success = true,
-            Message = "This route does not have a POST request method, only POST. Try again."
+            Message = "This route does not have a POST request method, only GET. Try again."
         };
     }
 
@@ -34,7 +34,7 @@ public class Controller : ControllerBase
         return new ServiceResponse<List<string>>() {
             Data = new List<string>() {
             "Hello, World!",
-            "The Jinx Coffeehouse API is LIVE!",
+            "The Jinx Coffeehouse MenuService API is LIVE!",
             "Version 1.0.0"
             },
             Success = true,
@@ -50,7 +50,7 @@ public class Controller : ControllerBase
         return new ServiceResponse<string>() {
             Data = null,
             Success = true,
-            Message = "This route does not have a PUT request method, only POST. Try again."
+            Message = "This route does not have a PUT request method, only GET. Try again."
         };
     }
 
@@ -62,7 +62,7 @@ public class Controller : ControllerBase
         return new ServiceResponse<string>() {
             Data = null,
             Success = true,
-            Message = "This route does not have a DELETE request method, only POST. Try again."
+            Message = "This route does not have a DELETE request method, only GET. Try again."
         };
     }
 }

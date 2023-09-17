@@ -6,7 +6,10 @@
   "LastEditedAt": "2023-09-15T00:00:00.000Z",
   "Name": "Vanilla Chai",
   "Type": 1,
-  "Description": "Black tea infused with cinnamon, clove and other warming spices is combined with steamed milk and topped with foam for the perfect balance of sweet and spicy. An iconic chai cup."
+  "Description": "Black tea infused with cinnamon, clove and other warming spices is combined with steamed milk and topped with foam for the perfect balance of sweet and spicy. An iconic chai cup.",
+  "Tags": [],
+  "PossibleAlterations": [],
+  "Price": 365
 },
 {
   "_id": {
@@ -16,7 +19,10 @@
   "LastEditedAt": "2023-09-15T00:00:00.000Z",
   "Name": "Caffè Americano",
   "Type": 1,
-  "Description": "Espresso shots topped with hot water create a light layer of crema culminating in this wonderfully rich cup with depth and nuance."
+  "Description": "Espresso shots topped with hot water create a light layer of crema culminating in this wonderfully rich cup with depth and nuance.",
+  "Tags": [],
+  "PossibleAlterations": [],
+  "Price": 315
 },
 {
   "_id": {
@@ -26,15 +32,73 @@
   "LastEditedAt": "2023-09-15T00:00:00.000Z",
   "Name": "Chocolate Croissant",
   "Type": 2,
-  "Description": "Two generous pieces of chocolate wrapped in a butter croissant with soft, flaky layers and a golden-brown crust. -VEGETARIAN"
+  "Description": "Two generous pieces of chocolate wrapped in a butter croissant with soft, flaky layers and a golden-brown crust. -VEGETARIAN",
+  "Tags": [],
+  "PossibleAlterations": [],
+  "Price": 125
 },
 {
   "_id": {
-    "$oid": "6503cc61558e460a90911977"
+    "$oid": "6507662a5807100a14e3d6fb"
   },
-  "CreatedAt": "2023-09-15T00:00:00.000Z",
-  "LastEditedAt": "2023-09-15T00:00:00.000Z",
+  "CreatedAt": {
+    "$date": {
+      "$numberLong": "-62135596800000"
+    }
+  },
+  "LastEditedAt": {
+    "$date": {
+      "$numberLong": "-62135596800000"
+    }
+  },
+  "Name": "Pour-over Coffee",
+  "Type": 1,
+  "Description": "DESCRIPTION",
+  "Tags": [
+    "Coffee"
+  ],
+  "PossibleAlterations": [
+    "Decaf"
+  ],
+  "Price": 100
+},
+{
+  "_id": {
+    "$oid": "6507816adb6a3e33ec1c2a9c"
+  },
+  "CreatedAt": {
+    "$date": {
+      "$numberLong": "-62135596800000"
+    }
+  },
+  "LastEditedAt": {
+    "$date": "2023-09-17T22:47:04.477Z"
+  },
+  "Name": "Caffe Latte",
+  "Type": 1,
+  "Description": "Our dark, rich espresso balanced with steamed milk and a light layer of foam. A perfect milk-forward warm-up.",
+  "Tags": [],
+  "PossibleAlterations": [
+    "Oat Milk"
+  ],
+  "Price": 445
+},
+{
+  "_id": {
+    "$oid": "6507825bdb6a3e33ec1c2a9d"
+  },
+  "CreatedAt": {
+    "$date": "2023-09-17T22:48:59.427Z"
+  },
+  "LastEditedAt": {
+    "$date": "2023-09-17T22:48:59.427Z"
+  },
   "Name": "Monthly JINX Mug",
   "Type": 3,
-  "Description": "Check out the newest design of our official JNX Merch mug. Design by our good friend SpookyLatte. Available until the next design drops, so get it while you can!"
+  "Description": "Check out the newest design of our official JNX Merch mug. Design by our good friend SpookyLatte. Available until the next design drops, so get it while you can!",
+  "Tags": [
+    "Mug"
+  ],
+  "PossibleAlterations": [],
+  "Price": 1500
 }]
