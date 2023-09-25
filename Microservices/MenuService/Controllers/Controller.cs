@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using REST_API.Models;
+using JinxMenuService.Models;
 
-namespace REST_API.Controllers;
+namespace JinxMenuService.Controllers;
 
 [ApiController]
 [Route("[controller]")]

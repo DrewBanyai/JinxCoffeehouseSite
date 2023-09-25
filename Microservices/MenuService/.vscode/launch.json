@@ -10,7 +10,7 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/bin/Debug/net7.0/REST_API.dll",
+            "program": "${workspaceFolder}/bin/Debug/net7.0/JinxMenuService.dll",
             "args": [],
             "cwd": "${workspaceFolder}",
             "stopAtEntry": false,
@@ -20,7 +20,8 @@
                 "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
             },
             "env": {
-                "ASPNETCORE_ENVIRONMENT": "Development"
+                "ASPNETCORE_ENVIRONMENT": "Development",
+                "ASPNETCORE_URLS": "http://0.0.0.0:2345 dotnet MyApp.dll"
             },
             "sourceFileMap": {
                 "/Views": "${workspaceFolder}/Views"

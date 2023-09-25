@@ -1,11 +1,10 @@
-using REST_API.Models;
-using REST_API.DTOs;
+using JinxMenuService.Models;
+using JinxMenuService.DTOs;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 using AutoMapper;
-using MongoDB.Bson;
 
-namespace REST_API.Services;
+namespace JinxMenuService.Services;
 
 public class MenuImagesService
 {

@@ -1,5 +1,5 @@
-using REST_API.Models;
-using REST_API.Services;
+using JinxMenuService.Models;
+using JinxMenuService.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 

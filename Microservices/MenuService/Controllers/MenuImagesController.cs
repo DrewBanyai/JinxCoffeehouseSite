@@ -1,11 +1,11 @@
 using Microsoft.AspNetCore.Mvc;
 
-using REST_API.Services;
-using REST_API.Models;
-using REST_API.DTOs;
+using JinxMenuService.Services;
+using JinxMenuService.Models;
+using JinxMenuService.DTOs;
 using MongoDB.Bson;
 
-namespace REST_API.Controllers;
+namespace JinxMenuService.Controllers;
 
 [ApiController]
 [Route("[controller]")]
