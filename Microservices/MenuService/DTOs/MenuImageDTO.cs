@@ -1,7 +1,7 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace JinxMenuService.DTOs;
+namespace MenuService.DTOs;
 
 public class MenuImageDTO
 {

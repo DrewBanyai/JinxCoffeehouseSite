@@ -1,10 +1,10 @@
-using JinxMenuService.Models;
-using JinxMenuService.DTOs;
+using MenuService.Models;
+using MenuService.DTOs;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 using AutoMapper;
 
-namespace JinxMenuService.Services;
+namespace MenuService.Services;
 
 public class MenuItemsService
 {

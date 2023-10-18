@@ -1,5 +1,5 @@
-using JinxMenuService.Models;
-using JinxMenuService.Services;
+using MenuService.Models;
+using MenuService.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 

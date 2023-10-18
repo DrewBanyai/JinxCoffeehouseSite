@@ -1,4 +1,13 @@
 {
+  "name": "menu-service",
+  "version": "1.0.0",
+  "homepage": "https://github.com/DrewBanyai/JinxCoffeehouse/",
+  "private": true,
+  "scripts": {
+    "build": "dotnet publish MenuService.sln -c Release -o out",
+    "start": "dotnet run",
+    "watch": "dotnet watch run"
+  },
   "dependencies": {
     "mongodb": "^6.1.0"
   }

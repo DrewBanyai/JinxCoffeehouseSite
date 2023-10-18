@@ -1,4 +1,4 @@
-namespace JinxMenuService.Models
+namespace MenuService.Models
 {
     public class ServiceResponse<T>
     {

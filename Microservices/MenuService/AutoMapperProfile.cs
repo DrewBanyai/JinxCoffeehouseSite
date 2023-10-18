@@ -1,8 +1,8 @@
 using AutoMapper;
-using JinxMenuService.DTOs;
-using JinxMenuService.Models;
+using MenuService.DTOs;
+using MenuService.Models;
 
-namespace JinxMenuService.Profiles;
+namespace MenuService.Profiles;
 
 public class AutoMapperProfile : Profile
 {

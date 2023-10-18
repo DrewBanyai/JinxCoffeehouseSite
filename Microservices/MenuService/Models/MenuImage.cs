@@ -1,7 +1,7 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace JinxMenuService.Models;
+namespace MenuService.Models;
 
 public class MenuImage
 {

@@ -9,8 +9,10 @@ This project is a .NET 7 REST API utilizing a MongoDB non-relational database. T
 This app allows a user to do the following:
 
 1. **GET Request** route **'/'**, which responds a confirmation that the Web API is live and identifies itself along with it's version number.
-2. **GET Request** route **'/Menu'**, which sends back a full list of menu items.
-3. **POST Request** route **'/Menu'**, which allows for a JSON body to specify an item type and sends back a list of all menu items tagged with that item type.
+2. **GET Request** route **'/MenuItems'**, which sends back a full list of menu items.
+3. **POST Request** route **'/MenuItems'**, which allows for a JSON body to specify an item type and sends back a list of all menu items tagged with that item type.
+4. **PUT Request** route **'/MenuItems'**, which allows for a JSON body to specify an full item and have it inserted into the database
+5. **DELETE Request** route **'/MenuItems'**, which allows for a specified item ID to be looked up and removed from the database
 
 #
 #
@@ -42,7 +44,7 @@ dotnet watch run
 
 #### Filtering the Menu:
 
-If you would like to send a POST request to the **'/Menu'** route and would like to specify the MenuItemType, you do so by having a JSON body such as this:
+If you would like to send a POST request to the **'/MenuItems'** route and would like to specify the MenuItemType, you do so by having a JSON body such as this:
 
 ```json
 {
